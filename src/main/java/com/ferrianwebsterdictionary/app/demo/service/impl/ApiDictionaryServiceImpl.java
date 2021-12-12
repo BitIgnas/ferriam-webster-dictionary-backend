@@ -1,10 +1,9 @@
 package com.ferrianwebsterdictionary.app.demo.service.impl;
 
 import com.ferrianwebsterdictionary.app.demo.dto.ApiWordResponse;
-import com.ferrianwebsterdictionary.app.demo.exception.ApiDictionaryWordNotFoundException;
 import com.ferrianwebsterdictionary.app.demo.model.Definition;
 import com.ferrianwebsterdictionary.app.demo.model.Meaning;
-import com.ferrianwebsterdictionary.app.demo.service.ApiWordService;
+import com.ferrianwebsterdictionary.app.demo.service.ApiDictionaryService;
 import org.springframework.core.env.Environment;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -14,12 +13,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class ApiWordServiceImpl implements ApiWordService {
+public class ApiDictionaryServiceImpl implements ApiDictionaryService {
 
     private final RestTemplate restTemplate;
     private final Environment environment;
 
-    public ApiWordServiceImpl(RestTemplate restTemplate, Environment environment) {
+    public ApiDictionaryServiceImpl(RestTemplate restTemplate, Environment environment) {
         this.restTemplate = restTemplate;
         this.environment = environment;
     }

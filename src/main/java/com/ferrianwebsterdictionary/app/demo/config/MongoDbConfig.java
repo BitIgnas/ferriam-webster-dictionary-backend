@@ -23,7 +23,7 @@ public class MongoDbConfig extends AbstractMongoClientConfiguration {
     @Override
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create("mongodb://root:root@localhost:27017/ferrian-webster");
+        return MongoClients.create(environment.getProperty("spring.data.mongodb.uri"));
     }
 
     @Override

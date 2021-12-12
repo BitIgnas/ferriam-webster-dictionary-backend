@@ -1,43 +1,25 @@
-package com.ferrianwebsterdictionary.app.demo.model;
+package com.ferrianwebsterdictionary.app.demo.dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.ferrianwebsterdictionary.app.demo.model.NounType;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.Instant;
+public class CustomWordRequest {
 
-@Document
-public class CustomWord {
-
-    @Id
-    private String id;
     private String word;
     private String meaning;
     private String origin;
     private String phonetic;
-    @Field(name = "nounType")
     private NounType nounType;
-    private Instant createdAt;
 
-    public CustomWord(String id, String word, String meaning, String origin, String phonetic, NounType nounType, Instant createdAt) {
-        this.id = id;
+    public CustomWordRequest(String word, String meaning, String origin, String phonetic, NounType nounType) {
         this.word = word;
         this.meaning = meaning;
         this.origin = origin;
         this.phonetic = phonetic;
         this.nounType = nounType;
-        this.createdAt = createdAt;
     }
 
-    public CustomWord() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public CustomWordRequest() {
     }
 
     public String getWord() {
@@ -78,13 +60,5 @@ public class CustomWord {
 
     public void setNounType(NounType nounType) {
         this.nounType = nounType;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
     }
 }

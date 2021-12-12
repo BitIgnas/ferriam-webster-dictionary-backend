@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CustomWordRepository {
     List<CustomWord> findByName(String name);
+    List<CustomWord> findByWordByRegex(String part);
 }

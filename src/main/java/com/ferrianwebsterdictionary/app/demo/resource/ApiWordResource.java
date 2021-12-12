@@ -1,8 +1,7 @@
 package com.ferrianwebsterdictionary.app.demo.resource;
 
 import com.ferrianwebsterdictionary.app.demo.dto.ApiWordResponse;
-import com.ferrianwebsterdictionary.app.demo.service.ApiWordService;
-import org.springframework.http.MediaType;
+import com.ferrianwebsterdictionary.app.demo.service.ApiDictionaryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,26 +16,26 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping("/api/v2/word")
 public class ApiWordResource {
 
-    private final ApiWordService apiWordService;
+    private final ApiDictionaryService apiDictionaryService;
 
-    public ApiWordResource(ApiWordService apiWordService) {
-        this.apiWordService = apiWordService;
+    public ApiWordResource(ApiDictionaryService apiDictionaryService) {
+        this.apiDictionaryService = apiDictionaryService;
     }
 
     @GetMapping(value = "/find/{word}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ApiWordResponse>> getWordDefinition(@PathVariable("word") String word) {
-        return ResponseEntity.ok().body(apiWordService.getWordDefinition(word));
+        return ResponseEntity.ok().body(apiDictionaryService.getWordDefinition(word));
     }
 
     @GetMapping(value = "/find/{word}/{partOfSpeech}", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ApiWordResponse>> getWordDefinitionsWithPartOfSpeech(@PathVariable("word") String word,
                                                                                     @PathVariable("partOfSpeech") String partOfSpeech) {
-        return ResponseEntity.ok().body(apiWordService.getWordDefinitionWithPartOfSpeech(word, partOfSpeech));
+        return ResponseEntity.ok().body(apiDictionaryService.getWordDefinitionWithPartOfSpeech(word, partOfSpeech));
     }
 
     @GetMapping(value = "/find/{word}/synonyms", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getWordSynonyms(@PathVariable("word") String word) {
-        return ResponseEntity.ok().body(apiWordService.getAllWordSynonyms(word));
+        return ResponseEntity.ok().body(apiDictionaryService.getAllWordSynonyms(word));
     }
 
 }

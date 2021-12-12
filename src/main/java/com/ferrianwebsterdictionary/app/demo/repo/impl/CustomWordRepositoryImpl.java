@@ -1,5 +1,7 @@
 package com.ferrianwebsterdictionary.app.demo.repo.impl;
 
+import ch.qos.logback.core.spi.AbstractComponentTracker;
+import ch.qos.logback.core.spi.ComponentTracker;
 import com.ferrianwebsterdictionary.app.demo.model.CustomWord;
 import com.ferrianwebsterdictionary.app.demo.repo.CustomWordRepository;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -20,9 +22,19 @@ public class CustomWordRepositoryImpl implements CustomWordRepository {
 
     @Override
     public List<CustomWord> findByName(String name) {
-        Query query = new Query()
-                .addCriteria(Criteria.where("name").is(name));
+        Query query = new Query().addCriteria(Criteria.where("name").is(name));
 
         return mongoTemplate.find(query, CustomWord.class);
     }
+
+    @Override
+    public List<CustomWord> findByWordByRegex(String regexPart) {
+        Query query = new Query().addCriteria(Criteria.where("name").regex(regexPart, "i"));
+
+        return mongoTemplate.find(query, CustomWord.class);
+    }
+
+
+
+
 }
