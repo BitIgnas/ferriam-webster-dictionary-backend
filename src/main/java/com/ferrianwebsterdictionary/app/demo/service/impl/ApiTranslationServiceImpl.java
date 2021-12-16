@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.ferrianwebsterdictionary.app.demo.deserializer.TranslatedJsonWordDeserializer;
+import com.ferrianwebsterdictionary.app.demo.deserializer.TranslatedWordJsonDeserializer;
 import com.ferrianwebsterdictionary.app.demo.dto.ApiTranslationRequest;
 import com.ferrianwebsterdictionary.app.demo.dto.ApiTranslationResponse;
 import com.ferrianwebsterdictionary.app.demo.service.ApiTranslationService;
@@ -56,7 +56,7 @@ public class ApiTranslationServiceImpl implements ApiTranslationService {
     public ApiTranslationResponse mapFromJsonToResponse(String json) {
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule("CustomWordDeserializer", new Version(1, 0, 0, null, null, null));
-        module.addDeserializer(ApiTranslationResponse.class, new TranslatedJsonWordDeserializer());
+        module.addDeserializer(ApiTranslationResponse.class, new TranslatedWordJsonDeserializer());
         mapper.registerModule(module);
 
         try {

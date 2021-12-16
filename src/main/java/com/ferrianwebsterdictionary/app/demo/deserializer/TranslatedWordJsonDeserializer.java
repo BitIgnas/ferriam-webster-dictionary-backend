@@ -17,14 +17,14 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-public class TranslatedJsonWordDeserializer extends StdDeserializer<ApiTranslationResponse> {
+public class TranslatedWordJsonDeserializer extends StdDeserializer<ApiTranslationResponse> {
 
 
-    public TranslatedJsonWordDeserializer() {
+    public TranslatedWordJsonDeserializer() {
         this(null);
     }
 
-    public TranslatedJsonWordDeserializer(Class<?> vc) {
+    public TranslatedWordJsonDeserializer(Class<?> vc) {
         super(vc);
     }
 
