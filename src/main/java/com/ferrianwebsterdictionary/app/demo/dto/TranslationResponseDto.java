@@ -2,7 +2,7 @@ package com.ferrianwebsterdictionary.app.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ApiTranslationResponse {
+public class TranslationResponseDto {
 
     @JsonProperty("from")
     private String from;
@@ -17,7 +17,7 @@ public class ApiTranslationResponse {
     @JsonProperty("translated_text")
     private String translatedText;
 
-    public ApiTranslationResponse(String from, String originalText, Integer status, String to, Integer translatedCharacters, String translatedText) {
+    public TranslationResponseDto(String from, String originalText, Integer status, String to, Integer translatedCharacters, String translatedText) {
         this.from = from;
         this.originalText = originalText;
         this.status = status;
@@ -26,7 +26,7 @@ public class ApiTranslationResponse {
         this.translatedText = translatedText;
     }
 
-    public ApiTranslationResponse() {
+    public TranslationResponseDto() {
     }
 
     public String getFrom() {

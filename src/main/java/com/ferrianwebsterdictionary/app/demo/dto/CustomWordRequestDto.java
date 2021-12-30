@@ -1,9 +1,8 @@
 package com.ferrianwebsterdictionary.app.demo.dto;
 
 import com.ferrianwebsterdictionary.app.demo.model.NounType;
-import org.springframework.data.mongodb.core.mapping.Field;
 
-public class CustomWordRequest {
+public class CustomWordRequestDto {
 
     private String word;
     private String meaning;
@@ -11,7 +10,7 @@ public class CustomWordRequest {
     private String phonetic;
     private NounType nounType;
 
-    public CustomWordRequest(String word, String meaning, String origin, String phonetic, NounType nounType) {
+    public CustomWordRequestDto(String word, String meaning, String origin, String phonetic, NounType nounType) {
         this.word = word;
         this.meaning = meaning;
         this.origin = origin;
@@ -19,7 +18,7 @@ public class CustomWordRequest {
         this.nounType = nounType;
     }
 
-    public CustomWordRequest() {
+    public CustomWordRequestDto() {
     }
 
     public String getWord() {

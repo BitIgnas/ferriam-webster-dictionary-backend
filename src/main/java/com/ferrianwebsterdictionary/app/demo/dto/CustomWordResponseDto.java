@@ -1,23 +1,22 @@
 package com.ferrianwebsterdictionary.app.demo.dto;
 
 import com.ferrianwebsterdictionary.app.demo.model.NounType;
-import org.springframework.data.mongodb.core.mapping.Field;
 
-public class CustomWordResponse {
+public class CustomWordResponseDto {
 
     private String word;
     private String meaning;
     private String origin;
     private NounType nounType;
 
-    public CustomWordResponse(String word, String meaning, String origin, NounType nounType) {
+    public CustomWordResponseDto(String word, String meaning, String origin, NounType nounType) {
         this.word = word;
         this.meaning = meaning;
         this.origin = origin;
         this.nounType = nounType;
     }
 
-    public CustomWordResponse() {
+    public CustomWordResponseDto() {
     }
 
     public String getWord() {

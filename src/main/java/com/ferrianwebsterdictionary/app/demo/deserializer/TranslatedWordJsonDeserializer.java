@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.ferrianwebsterdictionary.app.demo.dto.ApiTranslationResponse;
+import com.ferrianwebsterdictionary.app.demo.dto.TranslationResponseDto;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -17,7 +17,7 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-public class TranslatedWordJsonDeserializer extends StdDeserializer<ApiTranslationResponse> {
+public class TranslatedWordJsonDeserializer extends StdDeserializer<TranslationResponseDto> {
 
 
     public TranslatedWordJsonDeserializer() {
@@ -30,7 +30,7 @@ public class TranslatedWordJsonDeserializer extends StdDeserializer<ApiTranslati
 
 
     @Override
-    public ApiTranslationResponse deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+    public TranslationResponseDto deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
         ObjectCodec codec = jsonParser.getCodec();
         JsonNode node = codec.readTree(jsonParser);
 
@@ -52,7 +52,7 @@ public class TranslatedWordJsonDeserializer extends StdDeserializer<ApiTranslati
         JsonNode translatedTextNode = node.get("translated_text");
         String translatedText = translatedTextNode.toString();
 
-        return new ApiTranslationResponse(from, originalText, status, to, translatedCharacters, retrieveDeserializedText(translatedText));
+        return new TranslationResponseDto(from, originalText, status, to, translatedCharacters, retrieveDeserializedText(translatedText));
     }
 
     public String retrieveDeserializedText(String json) {

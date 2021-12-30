@@ -6,7 +6,7 @@ import com.ferrianwebsterdictionary.app.demo.model.Phonetic;
 
 import java.util.List;
 
-public class ApiWordResponse {
+public class DictionaryResponseDto {
 
     @JsonProperty("word")
     private String word;
@@ -19,7 +19,7 @@ public class ApiWordResponse {
     @JsonProperty("meanings")
     private List<Meaning> meanings;
 
-    public ApiWordResponse() {
+    public DictionaryResponseDto() {
     }
 
     public String getWord() {

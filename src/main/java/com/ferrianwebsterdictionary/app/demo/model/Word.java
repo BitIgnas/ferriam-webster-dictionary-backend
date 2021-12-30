@@ -2,18 +2,20 @@ package com.ferrianwebsterdictionary.app.demo.model;
 
 import java.util.List;
 
-public class Definition {
+public class Word {
     private String definition;
+    private String example;
     private List<String> synonyms;
     private List<String> antonyms;
 
-    public Definition(String definition, List<String> synonyms, List<String> antonyms) {
+    public Word(String definition, String example, List<String> synonyms, List<String> antonyms) {
         this.definition = definition;
+        this.example = example;
         this.synonyms = synonyms;
         this.antonyms = antonyms;
     }
 
-    public Definition() {
+    public Word() {
     }
 
     public String getDefinition() {
@@ -22,6 +24,14 @@ public class Definition {
 
     public void setDefinition(String definition) {
         this.definition = definition;
+    }
+
+    public String getExample() {
+        return example;
+    }
+
+    public void setExample(String example) {
+        this.example = example;
     }
 
     public List<String> getSynonyms() {

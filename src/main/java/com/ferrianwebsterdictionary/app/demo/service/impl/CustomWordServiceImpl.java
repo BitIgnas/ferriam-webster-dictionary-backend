@@ -1,7 +1,7 @@
 package com.ferrianwebsterdictionary.app.demo.service.impl;
 
-import com.ferrianwebsterdictionary.app.demo.dto.CustomWordRequest;
-import com.ferrianwebsterdictionary.app.demo.dto.CustomWordResponse;
+import com.ferrianwebsterdictionary.app.demo.dto.CustomWordRequestDto;
+import com.ferrianwebsterdictionary.app.demo.dto.CustomWordResponseDto;
 import com.ferrianwebsterdictionary.app.demo.model.CustomWord;
 import com.ferrianwebsterdictionary.app.demo.repo.WordRepository;
 import com.ferrianwebsterdictionary.app.demo.service.CustomWordService;
@@ -20,49 +20,49 @@ public class CustomWordServiceImpl implements CustomWordService {
     }
 
     @Override
-    public CustomWordResponse saveWord(CustomWordRequest customWordRequest) {
-        return mapToCustomWordResponse(wordRepository.save(mapToCustomWord(customWordRequest)));
+    public CustomWordResponseDto saveWord(CustomWordRequestDto customWordRequestDto) {
+        return mapToCustomWordResponse(wordRepository.save(mapToCustomWord(customWordRequestDto)));
     }
 
     @Override
-    public List<CustomWordResponse> findAllWords() {
+    public List<CustomWordResponseDto> findAllWords() {
         return wordRepository.findAll().stream()
                 .map(this::mapToCustomWordResponse)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<CustomWordResponse> findByWordByRegex(String regex) {
+    public List<CustomWordResponseDto> findByWordByRegex(String regex) {
         return wordRepository.findByWordByRegex(regex).stream()
                 .map(this::mapToCustomWordResponse)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<CustomWordResponse> findWordByName(String name) {
+    public List<CustomWordResponseDto> findWordByName(String name) {
         return wordRepository.findByName(name).stream()
                 .map(this::mapToCustomWordResponse)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public CustomWordResponse mapToCustomWordResponse(CustomWord customWord) {
-        CustomWordResponse customWordResponse = new CustomWordResponse();
-        customWordResponse.setWord(customWord.getWord());
-        customWordResponse.setMeaning(customWord.getMeaning());
-        customWordResponse.setOrigin(customWord.getOrigin());
-        customWordResponse.setNounType(customWord.getNounType());
+    public CustomWordResponseDto mapToCustomWordResponse(CustomWord customWord) {
+        CustomWordResponseDto customWordResponseDto = new CustomWordResponseDto();
+        customWordResponseDto.setWord(customWord.getWord());
+        customWordResponseDto.setMeaning(customWord.getMeaning());
+        customWordResponseDto.setOrigin(customWord.getOrigin());
+        customWordResponseDto.setNounType(customWord.getNounType());
 
-        return customWordResponse;
+        return customWordResponseDto;
     }
 
     @Override
-    public CustomWord mapToCustomWord(CustomWordRequest customWordRequest) {
+    public CustomWord mapToCustomWord(CustomWordRequestDto customWordRequestDto) {
         CustomWord customWord = new CustomWord();
-        customWord.setWord(customWordRequest.getWord());
-        customWord.setMeaning(customWordRequest.getMeaning());
-        customWord.setOrigin(customWordRequest.getOrigin());
-        customWord.setNounType(customWordRequest.getNounType());
+        customWord.setWord(customWordRequestDto.getWord());
+        customWord.setMeaning(customWordRequestDto.getMeaning());
+        customWord.setOrigin(customWordRequestDto.getOrigin());
+        customWord.setNounType(customWordRequestDto.getNounType());
 
         return customWord;
     }

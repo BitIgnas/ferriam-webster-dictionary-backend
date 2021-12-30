@@ -2,7 +2,7 @@ package com.ferrianwebsterdictionary.app.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ApiTranslationRequest {
+public class TranslationRequestDto {
 
     @JsonProperty("text")
     private String text;
@@ -13,19 +13,19 @@ public class ApiTranslationRequest {
     @JsonProperty("protectedWords")
     private String protectedWords;
 
-    public ApiTranslationRequest(String text, String to) {
+    public TranslationRequestDto(String text, String to) {
         this.text = text;
         this.to = to;
     }
 
-    public ApiTranslationRequest(String text, String to, String from, String protectedWords) {
+    public TranslationRequestDto(String text, String to, String from, String protectedWords) {
         this.text = text;
         this.to = to;
         this.from = from;
         this.protectedWords = protectedWords;
     }
 
-    public ApiTranslationRequest() {
+    public TranslationRequestDto() {
     }
 
     public String getText() {
@@ -86,8 +86,8 @@ public class ApiTranslationRequest {
             return this;
         }
 
-        public ApiTranslationRequest build() {
-            return new ApiTranslationRequest(this.text, this.to, this.from, this.protectedWords);
+        public TranslationRequestDto build() {
+            return new TranslationRequestDto(this.text, this.to, this.from, this.protectedWords);
         }
 
     }

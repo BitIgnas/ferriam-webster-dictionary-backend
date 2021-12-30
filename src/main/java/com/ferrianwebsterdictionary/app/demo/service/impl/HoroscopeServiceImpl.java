@@ -1,7 +1,7 @@
 package com.ferrianwebsterdictionary.app.demo.service.impl;
 
-import com.ferrianwebsterdictionary.app.demo.dto.ApiHoroscopeResponse;
-import com.ferrianwebsterdictionary.app.demo.service.ApiHoroscopeService;
+import com.ferrianwebsterdictionary.app.demo.dto.HoroscopeResponseDto;
+import com.ferrianwebsterdictionary.app.demo.service.HoroscopeService;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -11,25 +11,23 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class ApiHoroscopeServiceImpl implements ApiHoroscopeService {
+public class HoroscopeServiceImpl implements HoroscopeService {
 
     private final RestTemplate restTemplate;
     private final Environment environment;
 
-    public ApiHoroscopeServiceImpl(RestTemplate restTemplate, Environment environment) {
+    public HoroscopeServiceImpl(RestTemplate restTemplate, Environment environment) {
         this.restTemplate = restTemplate;
         this.environment = environment;
     }
 
     @Override
-    public ApiHoroscopeResponse getHoroscope(String sign, String day) {
-        String url = String.format("%s/?sign=%s&day=%s", environment.getProperty("horoscope.rapid.api.url"), sign, day);
-
-        ResponseEntity<ApiHoroscopeResponse> responseEntity = restTemplate.exchange(
-                url,
+    public HoroscopeResponseDto getHoroscope(String sign, String day) {
+        ResponseEntity<HoroscopeResponseDto> responseEntity = restTemplate.exchange(
+                String.format("%s/?sign=%s&day=%s", environment.getProperty("horoscope.rapid.api.url"), sign, day),
                 HttpMethod.POST,
                 createHttpEntity(),
-                ApiHoroscopeResponse.class
+                HoroscopeResponseDto.class
         );
 
         return responseEntity.getBody();

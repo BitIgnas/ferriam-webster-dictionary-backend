@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Meaning {
     private String partOfSpeech;
-    private List<Definition> definitions;
+    private List<Word> words;
 
-    public Meaning(String partOfSpeech, List<Definition> definitions) {
+    public Meaning(String partOfSpeech, List<Word> words) {
         this.partOfSpeech = partOfSpeech;
-        this.definitions = definitions;
+        this.words = words;
     }
 
     public Meaning() {
@@ -22,11 +22,11 @@ public class Meaning {
         this.partOfSpeech = partOfSpeech;
     }
 
-    public List<Definition> getDefinitions() {
-        return definitions;
+    public List<Word> getDefinitions() {
+        return words;
     }
 
-    public void setDefinitions(List<Definition> definitions) {
-        this.definitions = definitions;
+    public void setDefinitions(List<Word> words) {
+        this.words = words;
     }
 }

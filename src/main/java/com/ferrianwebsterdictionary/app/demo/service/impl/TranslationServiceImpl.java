@@ -5,33 +5,33 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.ferrianwebsterdictionary.app.demo.deserializer.TranslatedWordJsonDeserializer;
-import com.ferrianwebsterdictionary.app.demo.dto.ApiTranslationRequest;
-import com.ferrianwebsterdictionary.app.demo.dto.ApiTranslationResponse;
-import com.ferrianwebsterdictionary.app.demo.service.ApiTranslationService;
+import com.ferrianwebsterdictionary.app.demo.dto.TranslationRequestDto;
+import com.ferrianwebsterdictionary.app.demo.dto.TranslationResponseDto;
+import com.ferrianwebsterdictionary.app.demo.service.TranslationService;
 import org.springframework.core.env.Environment;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class ApiTranslationServiceImpl implements ApiTranslationService {
+public class TranslationServiceImpl implements TranslationService {
 
     private final RestTemplate restTemplate;
     private final Environment environment;
 
-    public ApiTranslationServiceImpl(RestTemplate restTemplate, Environment environment) {
+    public TranslationServiceImpl(RestTemplate restTemplate, Environment environment) {
         this.restTemplate = restTemplate;
         this.environment = environment;
     }
 
     @Override
-    public ApiTranslationResponse translate(ApiTranslationRequest apiTranslationRequest) {
+    public TranslationResponseDto translate(TranslationRequestDto translationRequestDto) {
         String url = String.format(
                 "%s?text=%s&to=%s&from=%s",
                 environment.getProperty("translator.rapid.api.url"),
-                apiTranslationRequest.getText(),
-                apiTranslationRequest.getTo(),
-                apiTranslationRequest.getFrom());
+                translationRequestDto.getText(),
+                translationRequestDto.getTo(),
+                translationRequestDto.getFrom());
 
         ResponseEntity<String> response = restTemplate.exchange(
                 url,
@@ -53,14 +53,14 @@ public class ApiTranslationServiceImpl implements ApiTranslationService {
     }
 
     @Override
-    public ApiTranslationResponse mapFromJsonToResponse(String json) {
+    public TranslationResponseDto mapFromJsonToResponse(String json) {
         ObjectMapper mapper = new ObjectMapper();
         SimpleModule module = new SimpleModule("CustomWordDeserializer", new Version(1, 0, 0, null, null, null));
-        module.addDeserializer(ApiTranslationResponse.class, new TranslatedWordJsonDeserializer());
+        module.addDeserializer(TranslationResponseDto.class, new TranslatedWordJsonDeserializer());
         mapper.registerModule(module);
 
         try {
-            return mapper.readValue(json, ApiTranslationResponse.class);
+            return mapper.readValue(json, TranslationResponseDto.class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,7 @@
-package com.ferrianwebsterdictionary.app.demo.resource;
+package com.ferrianwebsterdictionary.app.demo.controller;
 
-import com.ferrianwebsterdictionary.app.demo.dto.CustomWordRequest;
-import com.ferrianwebsterdictionary.app.demo.dto.CustomWordResponse;
+import com.ferrianwebsterdictionary.app.demo.dto.CustomWordRequestDto;
+import com.ferrianwebsterdictionary.app.demo.dto.CustomWordResponseDto;
 import com.ferrianwebsterdictionary.app.demo.service.CustomWordService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,32 +12,32 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v2/custom-word")
-public class CustomWordResource {
+public class CustomWordController {
 
     private final CustomWordService customWordService;
 
-    public CustomWordResource(CustomWordService customWordService) {
+    public CustomWordController(CustomWordService customWordService) {
         this.customWordService = customWordService;
     }
 
     @PostMapping("/")
-    public ResponseEntity<CustomWordResponse> saveCustomWord(@RequestBody CustomWordRequest customWordRequest) {
+    public ResponseEntity<CustomWordResponseDto> saveCustomWord(@RequestBody CustomWordRequestDto customWordRequestDto) {
         URI location = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/v2/custom-word/").toUriString());
-        return ResponseEntity.created(location).body(customWordService.saveWord(customWordRequest));
+        return ResponseEntity.created(location).body(customWordService.saveWord(customWordRequestDto));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<CustomWordResponse>> getAllCustomWords() {
+    public ResponseEntity<List<CustomWordResponseDto>> getAllCustomWords() {
         return ResponseEntity.ok().body(customWordService.findAllWords());
     }
 
     @GetMapping("/regex/{regex}")
-    public ResponseEntity<List<CustomWordResponse>> getAllWordsByRegex(@PathVariable("regex") String regex) {
+    public ResponseEntity<List<CustomWordResponseDto>> getAllWordsByRegex(@PathVariable("regex") String regex) {
         return ResponseEntity.ok().body(customWordService.findByWordByRegex(regex));
     }
 
     @GetMapping("/name/{name}")
-    public ResponseEntity<List<CustomWordResponse>> getAllWordsByName(@PathVariable("name") String name) {
+    public ResponseEntity<List<CustomWordResponseDto>> getAllWordsByName(@PathVariable("name") String name) {
         return ResponseEntity.ok().body(customWordService.findWordByName(name));
     }
 

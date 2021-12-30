@@ -2,7 +2,7 @@ package com.ferrianwebsterdictionary.app.demo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ApiHoroscopeResponse {
+public class HoroscopeResponseDto {
 
     @JsonProperty("color")
     private String color;
@@ -21,7 +21,7 @@ public class ApiHoroscopeResponse {
     @JsonProperty("mood")
     private String mood;
 
-    public ApiHoroscopeResponse(String color, String compatibility, String currentDate, String dateRange, String description, String luckyNumber, String luckyTime, String mood) {
+    public HoroscopeResponseDto(String color, String compatibility, String currentDate, String dateRange, String description, String luckyNumber, String luckyTime, String mood) {
         this.color = color;
         this.compatibility = compatibility;
         this.currentDate = currentDate;
@@ -32,7 +32,7 @@ public class ApiHoroscopeResponse {
         this.mood = mood;
     }
 
-    public ApiHoroscopeResponse() {
+    public HoroscopeResponseDto() {
     }
 
     public String getColor() {
