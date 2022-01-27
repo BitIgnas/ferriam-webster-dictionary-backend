@@ -1,0 +1,236 @@
+.search-window {
+  background-color: #7b3838;
+  min-height: 7vh;
+}
+
+.section-bg {
+  background-color: #c4c4c4;
+  height: auto;
+  width: 100%;
+}
+
+.dictionary-page-body {
+  background-color: #fff;
+}
+
+.origin-italic {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.synonym-heading-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 28px;
+
+  color: #000000;
+}
+
+.synonym-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 25px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.route-heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+
+  color: #1d77ff;
+}
+
+.meanings-box {
+  background: #f5f1f1;
+  border: 2px solid #dfd7d7;
+  box-sizing: border-box;
+}
+
+.meaning-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+
+  color: #000000;
+}
+
+.box-line {
+  border-bottom: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.meanings-box-numbers {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  margin-left: 5px;
+
+  color: #0f6bf5;
+}
+
+.meanings-box-numbers a {
+  text-decoration: none;
+}
+
+.main-word-heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+
+  color: #000000;
+}
+
+.main-meaning-num {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.translator-heading {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #000000;
+}
+
+.translator-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #b9b4b4;
+}
+
+$color: #3694d7;
+$timing: 0.3s;
+
+body {
+  text-align: center;
+  background: mix($color, #fff, 10%);
+  min-height: 95vh;
+  margin: 0;
+  padding: 0;
+  border-bottom: 5vh solid $color;
+  font-family: "Myriad Pro", "Arial", sans;
+  font-size: 24px;
+}
+.dropdown-el {
+  margin-top: 20vh;
+
+  min-width: 12em;
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+  min-height: 2em;
+  max-height: 2em;
+  overflow: hidden;
+  top: 0.5em;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  color: #444;
+
+  outline: none;
+  border: 0.06em solid transparent;
+  border-radius: 1em;
+  background-color: mix($color, #fff, 25%);
+
+  transition: $timing all ease-in-out;
+  input:focus + label {
+    background: #def;
+  }
+  input {
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    position: absolute;
+    opacity: 0.01;
+  }
+  label {
+    border-top: 0.06em solid #d9d9d9;
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 1em;
+    padding-right: 3em;
+    cursor: pointer;
+    position: relative;
+    transition: $timing color ease-in-out;
+    &:nth-child(2) {
+      margin-top: 2em;
+      border-top: 0.06em solid #d9d9d9;
+    }
+  }
+  input:checked + label {
+    display: block;
+    border-top: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &:nth-child(2) {
+      margin-top: 0;
+      position: relative;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0.8em;
+    top: 0.9em;
+    border: 0.3em solid $color;
+    border-color: $color transparent transparent transparent;
+    transition: 0.4s all ease-in-out;
+  }
+  &.expanded {
+    border: 0.06em solid $color;
+    background: #fff;
+    border-radius: 0.25em;
+    padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+    max-height: 15em;
+
+    label {
+      border-top: 0.06em solid #d9d9d9;
+      &:hover {
+        color: $color;
+      }
+    }
+    input:checked + label {
+      color: $color;
+    }
+
+    &::after {
+      transform: rotate(-180deg);
+      top: 0.55em;
+    }
+  }
+}

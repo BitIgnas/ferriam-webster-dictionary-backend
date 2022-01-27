@@ -1,0 +1,74 @@
+.text {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+  }
+  
+  .comment-box-start {
+    background: #061022;
+    width: 1067px;
+    height: 30px;
+  }
+  
+  .comment-box {
+    background: #322B4E;
+    height: auto;
+    width: 1067px;
+  }
+  
+  .input-container {
+    height: 50px;
+  }
+  
+  
+  .input {   
+    background-color: #fff;
+    font-family: 'Slabo 13px', serif !important;
+    border-radius: 4px 0 0 4px;
+    border: 0;
+    color: black;
+    font-size: 20px;
+    height: 100%;
+    outline: 0px;
+    width: 100%;
+  }
+  
+  .underline {
+    border-bottom: 2px solid #fff;
+  }
+
+  input[type="text"] {
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+  
+  
+  
+  
+  
+  .submit {
+    background-color: #2F3F56;
+    border-radius: 0 8px 8px 0 ;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    height: 50px;
+    text-align: center;
+    width: 100%;
+
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  
+  .submit:active {
+    background-color: #0c264b;
+  }
+
+
+ 

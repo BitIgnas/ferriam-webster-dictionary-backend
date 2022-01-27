@@ -1,0 +1,70 @@
+.word-of-the-box {
+    width: 392px;
+    height: 378px;
+
+    background: url("../../../../assets/img//word-of-the-day-bg.svg");
+    position: relative;
+}
+
+.word-day-heading {
+    font-family: Solway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.line {
+    border: 3px solid #FFFFFF;
+
+}
+
+.word-day-heading-box {
+    border: none; 
+    width: 260px;
+    border-bottom-width: thin;
+    border-bottom: 3px solid rgb(248, 243, 243);  
+}
+
+.word-day-date {
+    font-family: Solway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.word-day-word {
+    font-family: Solway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.word-day-definition {
+    font-family: 'Slabo 13px', serif !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 23px;
+
+    color: #FFFFFF;
+}
+
+.word-of-the-day-buttom-box {
+    background-color: #4B1616;
+    height: 40px;
+}
+
+.word-day-buttom {
+    margin-top: 8.5rem;
+}
+
+.definition-link {
+    color: #FFFFFF;
+    text-decoration: none;
+}

@@ -1,0 +1,57 @@
+<section class="search-window vh-50">
+    <app-vu-search></app-vu-search>
+</section>
+
+<section class="section-bg">
+    <div class="container">
+        <div class="row d-flex justify-content-center pb-5">
+            <div class="col-md-8 mx-0 mx-md-5 dictionary-page-body pb-5">
+                <div class="row mx-4">
+                    <div class="col-12 mt-3 d-flex justify-content-start m-0 p-0">
+                        <span>
+                            <span class="route-heading">Home</span>
+                            >
+                            <span class="route-heading">Dictionary</span>
+                            >
+                            <span class="route-heading">{{ word | titlecase}}</span>
+                        </span>
+                    </div>
+
+                    <div class="col-12 mt-2 mb-2 box-line"></div>
+                    
+                    <div class="col-12  m-0 p-0 d-flex justify-content-start">
+                        <span class="synonyn-word-heading">synonyms</span>
+                    </div>
+
+                    <div class="col-12 mt-5 mb-5 m-0 p-0 d-flex justify-content-start">
+                        <span class="main-word-heading">{{ word }}</span>
+                    </div>
+
+                 
+                    <div class="col-12 mt-4 mb-1 box-lg-line"></div>
+
+                    <div class="col-12 mt-1 m-0 p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="part-of-speech-text">SYNONYMS</span>
+                            </div>
+                            
+                            <div class="col-12 px-4">
+                                <span class="origin-italic">1&nbsp;&nbsp; '{{ wordOrigin }}'</span>
+                            </div>
+
+                            <div class="col-12 mt-5  px-4">
+                                <span class="synonym-heading-text">SYNONYMS:</span>
+                            </div>
+
+                            <div class="col-12 mt-1 px-4" *ngFor="let synonym of wordSynonyms">
+                                <span class="synonym-text ">{{ synonym }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt-5 pt-5 mb-1 box-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>

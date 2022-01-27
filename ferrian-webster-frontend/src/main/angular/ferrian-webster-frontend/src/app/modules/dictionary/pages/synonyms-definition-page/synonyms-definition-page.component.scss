@@ -1,0 +1,214 @@
+.search-window {
+  background-color: #7b3838;
+  min-height: 19vh;
+}
+
+.section-bg {
+  background-color: #c4c4c4;
+  height: auto;
+  width: 100%;
+}
+
+.dictionary-page-body {
+  background-color: #fff;
+}
+
+.origin-italic {
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #000000;
+}
+
+.synonym-heading-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 28px;
+
+  color: #000000;
+}
+
+.synonym-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 25px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.route-heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+
+  color: #1d77ff;
+}
+
+.meanings-box {
+  background: #f5f1f1;
+  border: 2px solid #dfd7d7;
+  box-sizing: border-box;
+}
+
+.meaning-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+
+  color: #000000;
+}
+
+.box-line {
+  border-bottom: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.meanings-box-numbers {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  margin-left: 5px;
+
+  color: #0f6bf5;
+}
+
+.meanings-box-numbers a {
+  text-decoration: none;
+}
+
+.main-word-heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+
+  color: #000000;
+}
+
+.main-meaning-num {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.Pronunciation-heading {
+  font-family: Scheherazade;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 41px;
+
+  color: #000000;
+}
+
+.origin-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+
+  color: #000000;
+}
+
+.box-lg-line {
+  border-bottom: 3px solid #000000;
+  box-sizing: border-box;
+}
+
+.part-of-speech-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+
+  color: #ff8a00;
+}
+
+.definition-num {
+  font-family: Port Lligat Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 21px;
+}
+
+.custom-flex {
+  justify-content: space-between;
+}
+
+.definition-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 25px;
+
+  color: #000000;
+}
+
+.btn-dictionary {
+  background: #c4c4c4;
+  border-radius: 16px;
+  border: none;
+}
+
+.btn-link {
+  font-family: Poppins;
+  padding: 5px 0 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.definition-text-secondary {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 28px;
+
+  color: #000000;
+}
+
+.example-text {
+  font-family: Poly;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 18px;
+
+  color: #000000;
+}
+
+.synonyn-word-heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #000000;
+}

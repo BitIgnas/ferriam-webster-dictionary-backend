@@ -1,0 +1,15 @@
+<button *ngIf="synonyms" class="btn-dictionary" (click)="show = !show"><a class="btn-link">Synonyms+</a></button>
+
+<div *ngIf="show" [@grow]>
+    <div class="row">
+        <div class="col-12 ms-2" *ngFor="let synonym of synonyms">
+            <span *ngIf="synonym" class="synonyms-text">{{ synonym }}</span>
+        </div>
+        
+        <div class="col-12 ms-2">
+            <span class="synonyms-view-link"><a [routerLink]="['/dictionary/', word, 'synonyms']" class="link">view all synonyms</a></span>
+        </div>
+    </div>
+    
+</div>
+

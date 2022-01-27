@@ -1,0 +1,30 @@
+
+.container {
+    max-width: 78% !important;/*Set your own width %; */
+ }
+
+.navbar-color {
+    background: #fff !important;
+}
+
+.nav-link {
+    font-family: 'Slabo 13px', serif !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    margin-left: 2rem;
+}
+
+@media only screen and (max-width: 1230px) {
+    .nav-link {
+        font-family: 'Slabo 13px', serif !important;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 22px;
+    
+        margin-left: 2rem;
+    }
+}

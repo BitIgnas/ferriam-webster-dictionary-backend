@@ -1,0 +1,42 @@
+<div *ngFor="let definition of definitions; let j = index;" [attr.id]="definition.word + j">
+    <div class="col-md-11 mx-0 mx-md-5 dictionary-page-body pb-5 mt-5">
+        <div class="row mx-4">
+            <div class="col-12 mt-5 m-0 p-0 d-flex justify-content-start">
+                <span class="main-word-heading">{{ definition.word }}<sup class="main-meaning-num">{{ j+2 }}</sup></span>
+            </div>
+
+            <div class="col-12 mt-3 m-0 p-0" >
+                <span class="Pronunciation-heading">Pronunciation /{{ definition.phonetic }}/</span>
+            </div>
+
+            <div class="col-12 mt-4 mb-1 box-lg-line"></div>
+
+            <div class="col-12 mt-1 m-0 p-0">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="part-of-speech-text">{{ definition.meanings[0].partOfSpeech | uppercase }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4" *ngFor="let subDefinition of definition.meanings[0].definitions; let i = index;">
+                <div class="row d-flex justify-content-start">
+                    <div class="col-11 d-flex ms-4">
+                        <span class="definition-num">{{ i+1 }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+         
+                        <span class="definition-text-secondary">
+                           {{ subDefinition.definition }}
+                        </span>
+                    </div>
+
+                    <div *ngIf="subDefinition.example"  class="col-12 mt-2 mt-lg-0 d-flex justify-content-start ms-3 ps-3 ms-lg-5 ps-lg-5">
+                        <span class="definition-text">example:&nbsp; <span class="example-text">{{ subDefinition.example }}</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-5 mb-1 box-lg-line"></div>
+
+        </div>
+    </div>
+</div>

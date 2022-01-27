@@ -1,0 +1,39 @@
+.search-window {
+    background-color: #7B3838;
+    min-height: 19vh
+}
+
+.registration-box {
+    // margin-top: 10rem;
+    background-color: #444967;
+}
+
+.main-img {
+    background-image: url('../../../../../assets/img/bg-home.jpg');
+    height: 64vh;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1230px) {
+    .oxford-heading {
+        font-family: Sorts Mill Goudy;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 30px;
+    
+        color: #FFFFFF;
+    }
+}
+
+@media only screen and (max-width: 1230px) {
+    .oxford-heading {
+        font-family: Sorts Mill Goudy;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 30px;
+    
+        color: #FFFFFF;
+    }
+}

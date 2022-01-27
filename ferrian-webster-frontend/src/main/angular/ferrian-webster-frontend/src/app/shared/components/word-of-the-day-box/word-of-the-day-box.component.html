@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row d-flex ps-0 ps-lg-5" >
+        <div class="col-6 word-of-the-box mt-5">
+            <div class="row">
+                <div class="col-md-12 mt-3  d-flex justify-content-center">
+                    <span class="word-day-heading">Word of the day</span>
+                
+                </div>
+
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="word-day-heading-box"></div>
+                    
+                </div>
+
+                <div class="col-md-12 mt-1  d-flex justify-content-center">
+                    <span class="word-day-date">{{ currentDate | date: 'MMMM d, y'}}</span>
+                
+                </div>
+
+                <div class="col-md-12 mt-5 pt-4 d-flex justify-content-center">
+                    <span class="word-day-word">{{ generatedWord }}</span>
+                
+                </div>
+
+                <div class="col-md-12 mt-1 d-flex justify-content-center">
+                    <span class="word-day-definition"><u class="definition-line"><a [routerLink]="'/dictionary/' + generatedWord" class="definition-link">Go to definition, meaning.</a></u></span>
+                
+                </div>
+
+                <div class="col-md-12 word-day-buttom d-flex justify-content-center">
+                    <span class="word-day-definition">New day, new word.</span>
+                
+                </div>
+
+                
+
+            </div>
+        </div>
+        <div class="col-6">
+            
+        </div>
+    </div>    
+</div>
