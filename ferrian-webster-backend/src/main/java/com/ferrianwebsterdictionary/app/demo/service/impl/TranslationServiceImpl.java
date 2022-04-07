@@ -33,12 +33,7 @@ public class TranslationServiceImpl implements TranslationService {
                 translationRequestDto.getTo(),
                 translationRequestDto.getFrom());
 
-        ResponseEntity<String> response = restTemplate.exchange(
-                url,
-                HttpMethod.GET,
-                createHttpEntity(),
-                String.class
-        );
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, createHttpEntity(), String.class);
 
         return mapFromJsonToResponse(response.getBody());
     }

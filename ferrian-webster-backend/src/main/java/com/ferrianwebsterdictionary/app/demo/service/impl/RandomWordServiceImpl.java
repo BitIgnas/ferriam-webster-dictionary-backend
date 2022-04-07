@@ -17,7 +17,6 @@ import java.util.List;
 public class RandomWordServiceImpl implements RandomWordService {
 
     private final static Logger logger = LoggerFactory.getLogger(RandomWordServiceImpl.class);
-
     private final DictionaryService dictionaryService;
 
     public RandomWordServiceImpl(DictionaryService dictionaryService) {

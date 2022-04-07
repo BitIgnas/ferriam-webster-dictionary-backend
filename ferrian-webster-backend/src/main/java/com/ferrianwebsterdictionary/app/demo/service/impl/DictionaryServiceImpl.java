@@ -66,8 +66,7 @@ public class DictionaryServiceImpl implements DictionaryService {
         Map<Integer, DictionaryResponseDto> wordMeaningMap = mapResponseToMeaningMap(List.of(Objects.requireNonNull(response.getBody())));
 
         return Optional.ofNullable(wordMeaningMap.get(meaningNum)).orElseThrow(() ->
-                new NoWordFoundInMeaningIndexException(
-                        String.format("Word: %s doesn't have meaning at index: %d", word, meaningNum)));
+                new NoWordFoundInMeaningIndexException(String.format("Word: %s doesn't have meaning at index: %d", word, meaningNum)));
     }
 
     @Override
