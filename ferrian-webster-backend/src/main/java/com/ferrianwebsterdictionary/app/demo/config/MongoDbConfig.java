@@ -23,7 +23,7 @@ public class MongoDbConfig extends AbstractMongoClientConfiguration {
     @Override
     @Bean
     public MongoClient mongoClient() {
-        return MongoClients.create(Objects.requireNonNull(environment.getProperty("spring.data.mongodb.uri")));
+        return MongoClients.create(environment.getProperty("spring.data.mongodb.uri"));
     }
 
     @Override

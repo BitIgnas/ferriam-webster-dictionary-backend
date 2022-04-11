@@ -7,7 +7,6 @@ import org.springframework.retry.annotation.EnableRetry;
 
 @SpringBootApplication
 @EnableRetry
-@EnableMongoRepositories("com.ferrianwebsterdictionary.app.demo.repo")
 public class FerrianWebsterDictionaryApplication {
 
 	public static void main(String[] args) {
